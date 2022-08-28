@@ -1,0 +1,46 @@
+<h1 align="center" class="display-4 mb-5"><b>Orders</b></h1>
+
+<table class="table table-striped text-center">
+    <thead>
+    <tr>
+        <th scope="col"><h3>Order</h3></th>
+        <th scope="col"><h3>Customer Name</h3></th>
+        <th scope="col"><h3>Customer Email</h3></th>
+        <th scope="col"><h3>Customer phone</h3></th>
+        <th scope="col"><h3>Shipping Address</h3></th>
+        <th scope="col"><h3>Total</h3></th>
+        <th scope="col"><h3>Order Data</h3></th>
+        <th scope="col"><h3>Status</h3></th>
+        <th scope="col"><h3>Action</h3></th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr *ngFor="let order of page?.content">
+        <th class="align-middle" scope="row">
+            {{order.orderId}}
+        </th>
+        <td class="align-middle"><h5>{{order.buyerName}}</h5></td>
+        <td class="align-middle"><h5>{{order.buyerEmail}}</h5></td>
+        <td class="align-middle"><h5>{{order.buyerPhone}}</h5></td>
+        <td class="align-middle"><h5>{{order.buyerAddress}}</h5></td>
+        <td class="align-middle"><h5>{{order.orderAmount | currency}}</h5></td>
+        <td class="align-middle"><h5>{{order.createTime | date}}</h5></td>
+        <td class="align-middle"><h5>{{OrderStatus[order.orderStatus]}}</h5></td>
+        <td class="align-middle">
+            <a *ngIf="!(currentUser.role == Role.Customer && currentUser.name == order.buyerEmail)"
+               style="display:
+            block" href="" routerLink="/order/{{order.orderId}}">
+                Show</a>
+            <a *ngIf="order.orderStatus == 0" style="display: block" (click)="cancel(order)" routerLink="./">Cancel</a>
+            <a *ngIf="currentUser.role != Role.Customer && order.orderStatus == 0"
+               style="display: block"
+               (click)="finish(order)"
+               routerLink="./">
+                Finish</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<app-pagination [currentPage]="page"></app-pagination>

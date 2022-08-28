@@ -1,0 +1,45 @@
+<h1 align="center" class="display-4 mb-5"><b>My WishList</b></h1>
+
+<!--Cart Detail Table-->
+<table class="table table-striped text-center">
+    <thead>
+    <tr>
+        <th scope="col"><h3>Photo</h3></th>
+        <th scope="col"><h3>ID</h3></th>
+        <th scope="col"><h3>Name</h3></th>
+        <th scope="col"><h3>Price</h3></th>
+        <th scope="col"><h3>Action</h3></th>
+
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr *ngFor="let productInOrder of page?.content">
+      
+        <th class="align-middle" scope="row">
+            <a routerLink="/product/{{productInOrder.product.productId}}"><img height="100px"
+                                                                       src="{{productInOrder.product.productIcon}}"
+                                                                       alt="{{productInOrder.product.productName}}"></a>
+        </th>
+       <td class="align-middle">
+        <h4>{{productInOrder.product.productId}}</h4>
+       </td>
+        <td class="align-middle"><a
+                routerLink="/product/{{productInOrder.product.productId}}"><h4>{{productInOrder.product.productName}}</h4></a></td>
+        <td class="align-middle"><h4>{{productInOrder.product.productPrice | currency}}</h4></td>
+         
+        
+        <td class="align-middle" >
+            <a (click)="handleRemoveFromWishList(productInOrder.product.productId)" routerLink="/wishlist"><h4>Remove</h4></a>
+        </td>
+      
+    </tr>
+
+    </tbody>
+</table>
+
+<ng-template #empty>
+    <h4 class="text-muted text-center">Your Wishlist is empty. Go to get something! :)</h4>
+</ng-template>
+
+
