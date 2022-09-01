@@ -9,11 +9,12 @@ import {User} from '../models/User';
 import { UserListResponse} from '../response/user-list-response'
 
 
+
 @Injectable({
     providedIn: 'root'
 })
 export class UserService {
-
+    public couponcode : any;
     private currentUserSubject: BehaviorSubject<JwtResponse>;
     public currentUser: Observable<JwtResponse>;
     public nameTerms = new Subject<string>();
@@ -41,6 +42,7 @@ export class UserService {
                         localStorage.setItem('currentUser', JSON.stringify(user));
                     }
                     console.log((user.name));
+                    this.couponcode=user.name;
                     this.nameTerms.next(user.name);
                     this.currentUserSubject.next(user);
                     return user;

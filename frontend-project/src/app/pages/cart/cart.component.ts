@@ -16,6 +16,9 @@ import { OrderService } from 'src/app/services/order.service';
     styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
+    mycoupon50: boolean;
+
+   
 
     constructor(private cartService: CartService,
                 private userService: UserService,
@@ -44,6 +47,14 @@ export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
     }
 
     ngOnInit() {
+        this.userService.couponcode;
+        console.log( this.userService.couponcode);
+        if (  this.userService.couponcode == "raja raavi") {
+            this.mycoupon50 = true;
+        }
+        else {
+            this.mycoupon50 = false;
+        }
         this.cartService.getCart().subscribe(prods => {
             this.productInOrders = prods;
         });
@@ -80,10 +91,13 @@ export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
             (prev, cur) => prev + cur.count * cur.productPrice, 0);
     }
 
-    selected( val:any){
-        this.total= this.total - this.total*0.2;
+    selectedCoupon( val:any){
+        this.total= this.total - this.total*0.5;
         console.log(this.total);
     }
+
+
+
 
     addOne(productInOrder) {
         productInOrder.count++;
@@ -136,5 +150,7 @@ export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
         });
         console.log(this.coupon);
     }
+    
+
 }
 

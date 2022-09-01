@@ -30,18 +30,15 @@
                routerLink="/category/3">
                LIGHTINGS
             </a>
-
-           
-
         </div>
-
-        
 
         <div class="navbar-nav ml-auto">
             <a *ngIf="!currentUser || currentUser.role == Role.Customer"
                     class="nav-item nav-link " routerLink="/cart">
                 <i class="fas fa-shopping-cart"></i>
+                 
             Cart
+            <!-- <span class="badge badge-info">3</span> -->
             </a>
 
             <div class="navbar-nav" *ngIf="currentUser && currentUser.role == Role.Manager">

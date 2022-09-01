@@ -48,7 +48,6 @@
 
     </tbody>
 </table>
-
 <div *ngIf="productInOrders?.length > 0; else empty">
     <select [(ngModel)]="selectedCoupon" name="Coupon" class="form-control" >
         <option>Select Coupon</option>
@@ -58,8 +57,11 @@
     </select>
     <!--<h2>{{selectedCoupon}}</h2>-->
     <h5 *ngIf="!selectedCoupon"style="display: inline;">Total: {{total | currency}} </h5>
-    <h5 *ngIf="selectedCoupon" style="display: inline;">Total: {{total-total*0.2 | currency}}</h5><br><br>
-    <h5 *ngIf="selectedCoupon" style="display: inline;">Total: {{total-total*0.5 | currency}}</h5>
+    <h5 *ngIf=" this.mycoupon50" style="display: inline;">Total: {{total-total*0.5 | currency}}</h5><br><br>
+    <h5 *ngIf="!this.mycoupon50" style="display: inline;">Total: {{total-total*0.25 | currency}}</h5><br><br>
+
+
+    <!-- <h5 *ngIf="selectedCoupon1" style="display: inline;">Total: {{total-total*0.2 | currency}}</h5><br><br> -->
 
     <button (click)="checkout()" class="btn btn-warning float-right">place your order</button>
     <!--<button (click)="getCoupon()" class="btn btn-warning float-right">check</button> -->

@@ -1,5 +1,5 @@
-ProductId,ProductName,Price,Stock,Description,ProductIcon,CategoryType,,,,,,,,,
-B00021,Advanced CSS,45,25,Books for learning C++,https://imagelink,1,,,,,,,,,
-B00022,Basic CSS,35,30,Books for learning C,https://imagelink2,1,,,,,,,,,
-B00023,python,12,30,python,https://cdn.shopify.com/s/files/1/0603/0390/0910/products/61jLiCovxVL._SL1500_600x.jpg?v=1658988177,1,,,,,,,,,1
-B00024,java,10,20,java books,https://imagelink,2,,,,,,,,,
+ProductId,ProductName,Price,Stock,Description,ProductIcon,CategoryType
+B00021,Advanced CSS,45,25,Books for learning C++,https://imagelink,1
+B00022,Basic CSS,35,30,Books for learning C,https://imagelink2,1
+B00023,python,12,30,python,https://cdn.shopify.com/s/files/1/0603/0390/0910/products/61jLiCovxVL._SL1500_600x.jpg?v=1658988177,1
+B00024,java,10,20,java books,https://imagelink,2

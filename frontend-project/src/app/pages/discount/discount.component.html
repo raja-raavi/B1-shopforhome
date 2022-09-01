@@ -3,7 +3,13 @@
    
     Search <input type = "text" name="search" [(ngModel)]="searchText" placeholder ="Search Coupon" />
     <input [(ngModel)]="coupon" type="text" class="form-control form-control-lg" id="coupon" name="coupon" placeholder="Enter coupon code">    
-    <button (click)=addCoupon(coupon) align="right" class="btn btn-success">Add Coupon</button>
+    <button (click)=addCoupon(coupon) align="right" class="btn btn-success">Add Coupon</button><br><br>
+    
+    <h3>
+    <div style="color: red">
+        NOTE: The 50% off only applicable for user name "raja raavi" only (i.e specific user). Otherwise any user can get 25% off. 
+    </div>
+    </h3><br><br>
 
 <table id="table" class="table table-striped text-center" style="width:100%;">
     <thead>
