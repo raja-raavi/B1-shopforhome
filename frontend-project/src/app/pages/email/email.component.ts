@@ -33,7 +33,7 @@ export class EmailComponent implements OnInit {
           console.log(this.dataset);
           alert('Email Sent successfully');
           
-          this.dataset.recipient = '';
+          this.dataset.recipient = ''; 
           this.dataset.subject = '';
           this.dataset.msgBody = '';
         });

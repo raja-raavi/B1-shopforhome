@@ -2,7 +2,7 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    username: postgres
+    username: posgres
     password: 1234
     url: jdbc:postgresql://localhost/ecom_db
     platform: postgres
