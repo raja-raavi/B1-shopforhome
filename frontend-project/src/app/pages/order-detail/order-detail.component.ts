@@ -9,7 +9,7 @@ import {ActivatedRoute} from "@angular/router";
     templateUrl: './order-detail.component.html',
     styleUrls: ['./order-detail.component.css']
 })
-export class OrderDetailComponent implements OnInit {
+export class OrderDetailComponent implements OnInit { 
 
     constructor(private orderService: OrderService,
                 private route: ActivatedRoute) {
